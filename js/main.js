@@ -1,9 +1,9 @@
-// Stock Basics 101 - Main JavaScript File
+// Personal Finance Fundamentals - Main JavaScript File
 
 // Initialize progress tracking
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize progress in localStorage if it doesn't exist
-    if (!localStorage.getItem('stockBasicsProgress')) {
+    if (!localStorage.getItem('financeProgress')) {
         const initialProgress = {
             lesson1: {
                 completed: false,
@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
             totalProgress: 0, // Percentage of total progress
             progressHistory: [{ date: new Date().toISOString(), value: 0 }]
         };
-        localStorage.setItem('stockBasicsProgress', JSON.stringify(initialProgress));
+        localStorage.setItem('financeProgress', JSON.stringify(initialProgress));
     } else {
         // Update existing data structure to include bestScore if it doesn't exist
-        const progress = JSON.parse(localStorage.getItem('stockBasicsProgress'));
+        const progress = JSON.parse(localStorage.getItem('financeProgress'));
         let updated = false;
         
         for (let i = 1; i <= 3; i++) {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         if (updated) {
-            localStorage.setItem('stockBasicsProgress', JSON.stringify(progress));
+            localStorage.setItem('financeProgress', JSON.stringify(progress));
         }
     }
     
@@ -69,7 +69,7 @@ function updateActiveNavigation(currentPage) {
 
 // Mark a lesson as completed
 function completeLesson(lessonNumber) {
-    const progress = JSON.parse(localStorage.getItem('stockBasicsProgress'));
+    const progress = JSON.parse(localStorage.getItem('financeProgress'));
     
     // Only mark as completed if it wasn't already
     if (!progress[`lesson${lessonNumber}`].completed) {
@@ -85,7 +85,7 @@ function completeLesson(lessonNumber) {
             event: `Completed Lesson ${lessonNumber}`
         });
         
-        localStorage.setItem('stockBasicsProgress', JSON.stringify(progress));
+        localStorage.setItem('financeProgress', JSON.stringify(progress));
     }
 }
 
@@ -96,7 +96,7 @@ function getQuizProgressContribution(correct) {
 
 // Store current quiz score and update progress if it's a better score
 function storeQuizScore(lessonNumber, correctAnswers) {
-    const progress = JSON.parse(localStorage.getItem('stockBasicsProgress'));
+    const progress = JSON.parse(localStorage.getItem('financeProgress'));
     const lesson = progress[`lesson${lessonNumber}`];
     
     // Track the current quiz session score
@@ -125,7 +125,7 @@ function storeQuizScore(lessonNumber, correctAnswers) {
         }
     }
     
-    localStorage.setItem('stockBasicsProgress', JSON.stringify(progress));
+    localStorage.setItem('financeProgress', JSON.stringify(progress));
 }
 
 // Record quiz answer - modified to track separate quiz session
@@ -144,7 +144,7 @@ function recordQuizAnswer(lessonNumber, isCorrect) {
 
 // Get current progress as percentage
 function getCurrentProgress() {
-    const progress = JSON.parse(localStorage.getItem('stockBasicsProgress'));
+    const progress = JSON.parse(localStorage.getItem('financeProgress'));
     return progress.totalProgress;
 }
 

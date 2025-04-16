@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diversification - Stock Basics 101</title>
+    <title>Budgeting Basics - Personal Finance Fundamentals</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Stock Basics 101</a>
+            <a class="navbar-brand" href="index.html">Personal Finance Fundamentals</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -30,8 +30,8 @@
     <header class="bg-light py-5">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center">
-                <h1 class="display-4 fw-bolder">Diversification</h1>
-                <p class="lead fw-normal text-secondary mb-0">Learn why not putting all your eggs in one basket is crucial for successful investing</p>
+                <h1 class="display-4 fw-bolder">Budgeting Basics</h1>
+                <p class="lead fw-normal text-secondary mb-0">Learn how to create and maintain a budget that works for you</p>
             </div>
         </div>
     </header>
@@ -42,185 +42,457 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-10">
                     <div class="lesson-content">
-                        <h2 class="mb-4">What is Diversification?</h2>
+                        <h2 class="mb-4">What is a Budget?</h2>
                         
                         <div class="definition-box mb-4">
-                            <strong>Definition:</strong> Diversification is an investment strategy that involves spreading your money across many different investments to reduce risk.
+                            <strong>Definition:</strong> A budget is a financial plan that tracks your income and expenses over a period of time, helping you make informed decisions about how to spend and save your money.
                         </div>
                         
-                        <p>Think of diversification like not putting all your eggs in one basket. If you drop the basket, all your eggs break. But if you spread your eggs across multiple baskets, dropping one basket won't result in losing all your eggs.</p>
+                        <p>Think of a budget as a roadmap for your money. It shows where your money comes from, where it needs to go, and how much you can set aside for future goals. Creating a budget isn't about restricting your spending—it's about understanding your financial situation and making your money work for you.</p>
                         
-                        <p>In investment terms, diversification helps protect your portfolio from significant losses if one particular investment performs poorly.</p>
+                        <p>A good budget helps you:</p>
+                        <ul>
+                            <li>Track where your money is going</li>
+                            <li>Identify areas where you might be overspending</li>
+                            <li>Ensure you're saving enough for your goals</li>
+                            <li>Reduce financial stress by providing clarity</li>
+                            <li>Make more confident financial decisions</li>
+                        </ul>
                         
                         <div class="text-center my-5">
-                            <img src="img/eggs.png" alt="Diversification Concept - Eggs in Multiple Baskets" class="lesson-image img-fluid">
-                            <p class="text-muted mt-2"><small>Diversification protects you from losing everything if one investment fails</small></p>
+                            <img src="img/budget-concept.png" alt="Budget Concept - Income, Expenses, and Savings" class="lesson-image img-fluid">
+                            <p class="text-muted mt-2"><small>A budget helps you balance your income, expenses, and savings goals</small></p>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Interactive Element - Moved above the Why section -->
+            <!-- The 50/30/20 Rule -->
             <div class="row gx-4 gx-lg-5 justify-content-center mt-4">
                 <div class="col-lg-10">
                     <div class="lesson-content">
-                        <h2 class="mb-4">See Diversification in Action</h2>
+                        <h2 class="mb-4">The 50/30/20 Budgeting Rule</h2>
                         
-                        <div class="interactive-element">
-                            <h4 class="text-center mb-4">Interactive Portfolio Simulator</h4>
-                            
-                            <p>See how a diversified portfolio performs when the tech market experiences a downturn. Adjust other sector sliders to see their impact on overall returns.</p>
-                            
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="techSlider" class="form-label">Technology Sector Performance: <span id="techValue">-5%</span> <small>(Fixed at -5% downturn)</small></label>
-                                        <input type="range" class="form-range" id="techSlider" min="-50" max="50" value="-5" disabled>
-                                    </div>
-                                    
-                                    <div class="mb-3">
-                                        <label for="healthcareSlider" class="form-label">Healthcare Sector Performance: <span id="healthcareValue">0%</span></label>
-                                        <input type="range" class="form-range" id="healthcareSlider" min="-50" max="50" value="0">
-                                    </div>
-                                    
-                                    <div class="mb-3">
-                                        <label for="energySlider" class="form-label">Energy Sector Performance: <span id="energyValue">0%</span></label>
-                                        <input type="range" class="form-range" id="energySlider" min="-50" max="50" value="0">
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-6">
-                                    <div class="bg-light p-3 rounded">
-                                        <h5>Portfolio Return</h5>
-                                        
-                                        <div class="mb-3">
-                                            <p><strong>Concentrated Portfolio (100% Tech):</strong> <span id="concentratedReturn">0%</span></p>
-                                            <div class="progress">
-                                                <div id="concentratedBar" class="progress-bar bg-primary" role="progressbar" style="width: 50%"></div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div>
-                                            <p><strong>Diversified Portfolio (33% each sector):</strong> <span id="diversifiedReturn">0%</span></p>
-                                            <div class="progress">
-                                                <div id="diversifiedBar" class="progress-bar bg-success" role="progressbar" style="width: 50%"></div>
-                                            </div>
-                                        </div>
+                        <p>One popular and straightforward budgeting method is the 50/30/20 rule. This approach divides your after-tax income into three main categories:</p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 budget-card needs">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">50%</h3>
+                                        <h4>Needs</h4>
+                                        <p>Essential expenses you can't avoid</p>
+                                        <ul class="text-start">
+                                            <li>Housing (rent/mortgage)</li>
+                                            <li>Utilities</li>
+                                            <li>Groceries</li>
+                                            <li>Transportation</li>
+                                            <li>Insurance</li>
+                                            <li>Minimum debt payments</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="mt-4">
-                                <p class="text-center text-muted"><small>This simplified simulator demonstrates how diversification can reduce volatility in your portfolio.</small></p>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 budget-card wants">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">30%</h3>
+                                        <h4>Wants</h4>
+                                        <p>Non-essential expenses that improve your life</p>
+                                        <ul class="text-start">
+                                            <li>Dining out</li>
+                                            <li>Entertainment</li>
+                                            <li>Shopping</li>
+                                            <li>Hobbies</li>
+                                            <li>Subscriptions</li>
+                                            <li>Travel</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 budget-card savings">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">20%</h3>
+                                        <h4>Savings & Debt</h4>
+                                        <p>Building financial security</p>
+                                        <ul class="text-start">
+                                            <li>Emergency fund</li>
+                                            <li>Retirement accounts</li>
+                                            <li>Investments</li>
+                                            <li>Savings goals</li>
+                                            <li>Extra debt payments</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- New Random Return Diversification Simulator -->
-                        <div class="interactive-element mt-5">
-                            <h4 class="text-center mb-4">Random Return Simulator: Diversification in Action</h4>
+                        <p class="mt-3">This framework is a starting point that you can adjust based on your unique situation. For example, if you live in an expensive city, you might need to allocate more than 50% to needs. The key is to use this as a guideline while creating a budget that reflects your personal circumstances.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Creating Your Budget -->
+            <div class="row gx-4 gx-lg-5 justify-content-center mt-4">
+                <div class="col-lg-10">
+                    <div class="lesson-content">
+                        <h2 class="mb-4">Creating Your Budget in 5 Steps</h2>
+                        
+                        <div class="steps-container">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Calculate Your Monthly Income</h4>
+                                    <p>Start by determining how much money you bring home each month after taxes and deductions. Include all sources of income such as:</p>
+                                    <ul>
+                                        <li>Primary job salary/wages</li>
+                                        <li>Side hustle earnings</li>
+                                        <li>Rental income</li>
+                                        <li>Investment dividends</li>
+                                    </ul>
+                                    <p>For irregular income, calculate the average monthly amount based on past earnings.</p>
+                                </div>
+                            </div>
                             
-                            <p>This simulator shows how diversification reduces risk by spreading investments across multiple assets. Each time you run the simulation, it generates random returns for 5 different assets.</p>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Track Your Expenses</h4>
+                                    <p>List all your regular monthly expenses, separated into categories:</p>
+                                    <ul>
+                                        <li><strong>Fixed expenses:</strong> Costs that remain relatively constant each month (rent, car payment, insurance)</li>
+                                        <li><strong>Variable expenses:</strong> Costs that fluctuate month to month (groceries, utilities, entertainment)</li>
+                                    </ul>
+                                    <p>Review your bank and credit card statements from the past few months to identify spending patterns.</p>
+                                </div>
+                            </div>
                             
-                            <div class="row mt-4">
-                                <div class="col-md-12">
-                                    <div class="bg-light p-4 rounded">
-                                        <h5 class="mb-3">Asset Returns</h5>
-                                        
-                                        <div class="row">
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Set Financial Goals</h4>
+                                    <p>Define what you're trying to achieve with your budget:</p>
+                                    <ul>
+                                        <li><strong>Short-term goals:</strong> Building an emergency fund, paying off credit card debt</li>
+                                        <li><strong>Medium-term goals:</strong> Saving for a down payment, planning a vacation</li>
+                                        <li><strong>Long-term goals:</strong> Retirement savings, college fund for children</li>
+                                    </ul>
+                                    <p>Assign a specific dollar amount and timeline to each goal.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Allocate Your Income</h4>
+                                    <p>Distribute your income across your expense categories and savings goals. You can use the 50/30/20 rule as a starting point:</p>
+                                    <ul>
+                                        <li>50% for needs (housing, food, utilities, etc.)</li>
+                                        <li>30% for wants (entertainment, dining out, etc.)</li>
+                                        <li>20% for savings and debt repayment</li>
+                                    </ul>
+                                    <p>Adjust these percentages as needed to fit your lifestyle and goals.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h4>Monitor and Adjust</h4>
+                                    <p>A budget is not a "set it and forget it" tool. To be effective:</p>
+                                    <ul>
+                                        <li>Track your actual spending regularly</li>
+                                        <li>Compare actual spending to your budgeted amounts</li>
+                                        <li>Identify areas where you're over or under budget</li>
+                                        <li>Make adjustments as needed</li>
+                                        <li>Review and update your budget when your income or expenses change</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Budgeting Methods -->
+            <div class="row gx-4 gx-lg-5 justify-content-center mt-4">
+                <div class="col-lg-10">
+                    <div class="lesson-content">
+                        <h2 class="mb-4">Popular Budgeting Methods</h2>
+                        
+                        <p>There are many approaches to budgeting. The best method is the one you'll stick with consistently. Here are some popular budgeting methods to consider:</p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Zero-Based Budget</h4>
+                                        <p>Every dollar of your income is assigned a specific job (expenses, savings, debt). At the end of the month, your income minus your allocations should equal zero.</p>
+                                        <div class="pros-cons">
+                                            <div><strong>Pros:</strong> Highly detailed control, ensures all money is accounted for</div>
+                                            <div><strong>Cons:</strong> Time-intensive, requires frequent adjustments</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Envelope System</h4>
+                                        <p>Cash is physically placed in labeled envelopes for different spending categories. When an envelope is empty, you stop spending in that category until the next budget period.</p>
+                                        <div class="pros-cons">
+                                            <strong>Pros:</strong> Tangible spending limits, helps control overspending<br>
+                                            <strong>Cons:</strong> Less convenient for online purchases, impractical for large expenses
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Pay Yourself First</h4>
+                                        <p>Automatically direct a portion of your income to savings goals before paying any bills or discretionary spending.</p>
+                                        <div class="pros-cons">
+                                            <strong>Pros:</strong> Prioritizes savings, simple to implement with automatic transfers<br>
+                                            <strong>Cons:</strong> Less detailed tracking of other spending categories
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">50/30/20 Budget</h4>
+                                        <p>As discussed earlier, this method allocates 50% to needs, 30% to wants, and 20% to savings and debt repayment.</p>
+                                        <div class="pros-cons">
+                                            <strong>Pros:</strong> Simple to understand, provides flexibility within categories<br>
+                                            <strong>Cons:</strong> May not work for all income levels or in all geographic locations
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interactive Budget Calculator -->
+            <div class="row gx-4 gx-lg-5 justify-content-center mt-4">
+                <div class="col-lg-10">
+                    <div class="lesson-content">
+                        <h2 class="mb-4">Budget Calculator: Try It Yourself</h2>
+                        
+                        <div class="interactive-element">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form id="budgetCalculator">
+                                        <div class="row mb-4">
                                             <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <p><strong>Asset 1 (Tech):</strong> <span id="asset1Return" class="asset-return">0%</span></p>
-                                                    <div class="progress">
-                                                        <div id="asset1Bar" class="progress-bar" role="progressbar" style="width: 50%"></div>
+                                                <label for="monthlyIncome" class="form-label">Monthly Take-Home Income:</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="number" class="form-control" id="monthlyIncome" placeholder="0" min="0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <h5 class="mb-3">Monthly Expenses</h5>
+                                        
+                                        <div class="expenses-section">
+                                            <h6>Needs (50%)</h6>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="housing" class="form-label">Housing (Rent/Mortgage):</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="number" class="form-control needs-expense" id="housing" placeholder="0" min="0">
                                                     </div>
                                                 </div>
-                                                
-                                                <div class="mb-3">
-                                                    <p><strong>Asset 2 (Healthcare):</strong> <span id="asset2Return" class="asset-return">0%</span></p>
-                                                    <div class="progress">
-                                                        <div id="asset2Bar" class="progress-bar" role="progressbar" style="width: 50%"></div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="utilities" class="form-label">Utilities:</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="number" class="form-control needs-expense" id="utilities" placeholder="0" min="0">
                                                     </div>
                                                 </div>
-                                                
-                                                <div class="mb-3">
-                                                    <p><strong>Asset 3 (Finance):</strong> <span id="asset3Return" class="asset-return">0%</span></p>
-                                                    <div class="progress">
-                                                        <div id="asset3Bar" class="progress-bar" role="progressbar" style="width: 50%"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="groceries" class="form-label">Groceries:</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="number" class="form-control needs-expense" id="groceries" placeholder="0" min="0">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="transportation" class="form-label">Transportation:</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="number" class="form-control needs-expense" id="transportation" placeholder="0" min="0">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="insurance" class="form-label">Insurance:</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="number" class="form-control needs-expense" id="insurance" placeholder="0" min="0">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="minimumDebt" class="form-label">Minimum Debt Payments:</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="number" class="form-control needs-expense" id="minimumDebt" placeholder="0" min="0">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="expenses-section mt-4">
+                                            <h6>Wants (30%)</h6>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="diningOut" class="form-label">Dining Out:</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="number" class="form-control wants-expense" id="diningOut" placeholder="0" min="0">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="entertainment" class="form-label">Entertainment:</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="number" class="form-control wants-expense" id="entertainment" placeholder="0" min="0">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="shopping" class="form-label">Shopping (Non-essential):</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="number" class="form-control wants-expense" id="shopping" placeholder="0" min="0">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="subscriptions" class="form-label">Subscriptions/Memberships:</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="number" class="form-control wants-expense" id="subscriptions" placeholder="0" min="0">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="expenses-section mt-4">
+                                            <h6>Savings & Debt (20%)</h6>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="emergencyFund" class="form-label">Emergency Fund:</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="number" class="form-control savings-expense" id="emergencyFund" placeholder="0" min="0">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="retirement" class="form-label">Retirement Savings:</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="number" class="form-control savings-expense" id="retirement" placeholder="0" min="0">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="extraDebt" class="form-label">Extra Debt Payments:</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="number" class="form-control savings-expense" id="extraDebt" placeholder="0" min="0">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="otherSavings" class="form-label">Other Savings Goals:</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="number" class="form-control savings-expense" id="otherSavings" placeholder="0" min="0">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="d-grid gap-2 mt-4">
+                                            <button type="button" id="calculateBudget" class="btn btn-primary">Calculate Budget</button>
+                                        </div>
+                                    </form>
+                                    
+                                    <div id="budgetResults" class="mt-4" style="display: none;">
+                                        <h5>Budget Analysis</h5>
+                                        
+                                        <div class="row mt-3">
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card bg-light">
+                                                    <div class="card-body text-center">
+                                                        <h6>Needs</h6>
+                                                        <h4 id="needsTotal">$0</h4>
+                                                        <div class="progress mt-2">
+                                                            <div id="needsProgress" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                                        </div>
+                                                        <p class="mt-2 mb-0"><span id="needsPercentage">0%</span> of income</p>
+                                                        <p class="small text-muted">(Target: 50%)</p>
                                                     </div>
                                                 </div>
                                             </div>
                                             
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <p><strong>Asset 4 (Energy):</strong> <span id="asset4Return" class="asset-return">0%</span></p>
-                                                    <div class="progress">
-                                                        <div id="asset4Bar" class="progress-bar" role="progressbar" style="width: 50%"></div>
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card bg-light">
+                                                    <div class="card-body text-center">
+                                                        <h6>Wants</h6>
+                                                        <h4 id="wantsTotal">$0</h4>
+                                                        <div class="progress mt-2">
+                                                            <div id="wantsProgress" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                                        </div>
+                                                        <p class="mt-2 mb-0"><span id="wantsPercentage">0%</span> of income</p>
+                                                        <p class="small text-muted">(Target: 30%)</p>
                                                     </div>
                                                 </div>
-                                                
-                                                <div class="mb-3">
-                                                    <p><strong>Asset 5 (Consumer):</strong> <span id="asset5Return" class="asset-return">0%</span></p>
-                                                    <div class="progress">
-                                                        <div id="asset5Bar" class="progress-bar" role="progressbar" style="width: 50%"></div>
+                                            </div>
+                                            
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card bg-light">
+                                                    <div class="card-body text-center">
+                                                        <h6>Savings & Debt</h6>
+                                                        <h4 id="savingsTotal">$0</h4>
+                                                        <div class="progress mt-2">
+                                                            <div id="savingsProgress" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                                        </div>
+                                                        <p class="mt-2 mb-0"><span id="savingsPercentage">0%</span> of income</p>
+                                                        <p class="small text-muted">(Target: 20%)</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         
-                                        <hr class="my-4">
-                                        
-                                        <h5 class="mb-3">Portfolio Performance Comparison</h5>
-                                        
-                                        <div class="mb-3">
-                                            <p><strong>Single Asset Portfolio (100% Asset 1):</strong> <span id="singleAssetReturn" class="asset-return">0%</span></p>
-                                            <div class="progress">
-                                                <div id="singleAssetBar" class="progress-bar bg-danger" role="progressbar" style="width: 50%"></div>
+                                        <div class="row mt-3">
+                                            <div class="col-md-6 offset-md-3">
+                                                <div class="card" id="balanceCard">
+                                                    <div class="card-body text-center">
+                                                        <h6>Monthly Balance</h6>
+                                                        <h3 id="monthlyBalance">$0</h3>
+                                                        <p id="balanceMessage" class="mb-0">Your income equals your expenses.</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        
-                                        <div class="mb-3">
-                                            <p><strong>Diversified Portfolio (Equal 20% in Each Asset):</strong> <span id="diversifiedAssetReturn" class="asset-return">0%</span></p>
-                                            <div class="progress">
-                                                <div id="diversifiedAssetBar" class="progress-bar bg-success" role="progressbar" style="width: 50%"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="text-center mt-4">
-                                        <button id="runSimulationBtn" class="btn btn-primary">Run Simulation</button>
-                                    </div>
-                                    
-                                    <div class="mt-3">
-                                        <p class="text-center text-muted"><small>Each simulation run generates random returns between -5% and +10% for the assets. Notice how the diversified portfolio typically has less dramatic swings than the single-asset portfolio.</small></p>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Why It's Important - Moved below the interactive section -->
-            <div class="row gx-4 gx-lg-5 justify-content-center mt-4">
-                <div class="col-lg-10">
-                    <div class="lesson-content">
-                        <h2 class="mb-4">Why Is Diversification Important?</h2>
-                        
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h4><i class="fas fa-shield-alt text-primary me-2"></i> Reduces Risk</h4>
-                                <p>Diversification reduces the impact of volatility on your portfolio. When some investments perform poorly, others may perform well, balancing out your overall returns.</p>
-                                
-                                <h4 class="mt-4"><i class="fas fa-balance-scale text-primary me-2"></i> Stabilizes Returns</h4>
-                                <p>A well-diversified portfolio tends to generate more stable returns over time, with fewer dramatic ups and downs compared to a concentrated portfolio.</p>
-                            </div>
-                            
-                            <div class="col-md-6">
-                                <h4><i class="fas fa-search text-primary me-2"></i> Exposes You to Opportunities</h4>
-                                <p>By investing in different areas, you're positioned to benefit from growth in various sectors and markets that you might otherwise miss.</p>
-                                
-                                <h4 class="mt-4"><i class="fas fa-mountain text-primary me-2"></i> Helps Navigate Market Cycles</h4>
-                                <p>Different investments often respond differently to economic conditions. A diversified approach helps you weather various market cycles more effectively.</p>
                             </div>
                         </div>
                     </div>
@@ -237,17 +509,17 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <ul class="mb-0">
-                                        <li>Diversification helps reduce risk by spreading investments across multiple assets</li>
-                                        <li>Even when some investments perform poorly, others may perform well</li>
-                                        <li>You can diversify across different companies, sectors, and asset classes</li>
+                                        <li>A budget is a plan for your money, not a restriction</li>
+                                        <li>The 50/30/20 rule provides a simple framework to start budgeting</li>
+                                        <li>Track all income and expenses to gain financial clarity</li>
                                     </ul>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <ul class="mb-0">
-                                        <li>Diversification doesn't guarantee profits or protect against all losses</li>
-                                        <li>A well-diversified portfolio typically has more stable returns over time</li>
-                                        <li>Regular portfolio review ensures your diversification strategy remains effective</li>
+                                        <li>Choose a budgeting method that fits your personality and lifestyle</li>
+                                        <li>Regularly review and adjust your budget as needed</li>
+                                        <li>Budgeting is a skill that improves with practice and consistency</li>
                                     </ul>
                                 </div>
                             </div>
@@ -268,12 +540,11 @@
 
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Stock Basics 101 2025</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Personal Finance Fundamentals 2025</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     <script src="js/lesson1.js"></script>
 </body>

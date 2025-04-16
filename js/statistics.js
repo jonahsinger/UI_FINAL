@@ -1,4 +1,4 @@
-// Stock Basics 101 - Statistics Page JavaScript
+// Personal Finance Fundamentals - Statistics Page JavaScript
 
 // Global chart reference
 let progressChart = null;
@@ -46,10 +46,10 @@ function resetAllProgress() {
         sessionStorage.clear();
         
         // Remove existing progress data
-        localStorage.removeItem('stockBasicsProgress');
+        localStorage.removeItem('financeProgress');
         
         // Save the fresh progress data
-        localStorage.setItem('stockBasicsProgress', JSON.stringify(initialProgress));
+        localStorage.setItem('financeProgress', JSON.stringify(initialProgress));
         
         // Immediately update the UI without reloading
         renderStatistics();
@@ -75,7 +75,7 @@ function resetAllProgress() {
 // Load and render all statistics data
 function renderStatistics() {
     // Get progress data from localStorage
-    const progressData = localStorage.getItem('stockBasicsProgress');
+    const progressData = localStorage.getItem('financeProgress');
     
     // If no progress data exists, show empty state
     if (!progressData) {

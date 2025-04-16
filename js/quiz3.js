@@ -1,4 +1,4 @@
-// Stock Basics 101 - Quiz 3: Tax Implications JavaScript
+// Personal Finance Fundamentals - Quiz 3: Debt Management JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize quiz
