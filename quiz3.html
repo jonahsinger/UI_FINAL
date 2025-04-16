@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Implications Quiz - Stock Basics 101</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Stock Basics 101</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="statistics.html">Progress</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-light py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center">
+                <h1 class="display-4 fw-bolder">Tax Implications Quiz</h1>
+                <p class="lead fw-normal text-secondary mb-0">Test your knowledge about retirement accounts and tax strategies</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8">
+                    <div class="quiz-container">
+                        <div class="quiz-progress mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span>Question <span id="currentQuestion">1</span> of 5</span>
+                                <span><span id="correctCount">0</span> correct</span>
+                            </div>
+                            <div class="progress">
+                                <div id="quizProgressBar" class="progress-bar bg-info" role="progressbar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 1 -->
+                        <div class="question" id="question1">
+                            <h3 class="mb-4">What is the main difference between a Roth IRA and a traditional 401(k)?</h3>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">A.</span> A Roth IRA uses pre-tax contributions; a 401(k) uses after-tax contributions.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">B.</span> There is no difference.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="true">
+                                <span class="option-letter">C.</span> A Roth IRA is funded with after-tax money, while a traditional 401(k) is usually funded with pre-tax money.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">D.</span> A 401(k) has no employer matching, while a Roth IRA always does.
+                            </div>
+                            
+                            <div class="feedback correct mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Correct!</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Roth IRAs typically use after-tax funds (you pay taxes now but not later), while traditional 401(k)s often use pre-tax funds (you pay taxes when you withdraw).</p>
+                            </div>
+                            
+                            <div class="feedback incorrect mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times-circle me-2"></i>
+                                    <strong>Incorrect</strong>
+                                </div>
+                                <p class="mb-0 mt-2">A Roth IRA is funded with after-tax money (you pay taxes now), while a traditional 401(k) is typically funded with pre-tax money (you pay taxes later when you withdraw).</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 2 -->
+                        <div class="question" id="question2" style="display: none;">
+                            <h3 class="mb-4">Which statement is true about Roth IRAs?</h3>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">A.</span> You pay taxes on every withdrawal no matter what.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="true">
+                                <span class="option-letter">B.</span> Qualified withdrawals in retirement are generally tax-free.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">C.</span> You never pay any taxes on contributions.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">D.</span> Roth IRAs are only available through employers.
+                            </div>
+                            
+                            <div class="feedback correct mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Correct!</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Since Roth IRAs are funded with after-tax dollars, qualified withdrawals during retirement are tax-free, which is one of their main benefits.</p>
+                            </div>
+                            
+                            <div class="feedback incorrect mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times-circle me-2"></i>
+                                    <strong>Incorrect</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Roth IRAs provide tax-free qualified withdrawals in retirement. You pay taxes on the money before contributing to the account, but then you generally don't pay taxes on growth or qualified withdrawals.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 3 -->
+                        <div class="question" id="question3" style="display: none;">
+                            <h3 class="mb-4">Which of the following is typically a benefit of a 401(k)?</h3>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">A.</span> There is no maximum contribution limit.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">B.</span> You cannot invest in stocks within a 401(k).
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="true">
+                                <span class="option-letter">C.</span> Employer matching contributions can help your investments grow faster.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">D.</span> You must withdraw money at any time you choose without penalties.
+                            </div>
+                            
+                            <div class="feedback correct mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Correct!</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Many employers match a certain percentage of employee 401(k) contributions, effectively giving "free" additional funds that can significantly boost your retirement savings.</p>
+                            </div>
+                            
+                            <div class="feedback incorrect mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times-circle me-2"></i>
+                                    <strong>Incorrect</strong>
+                                </div>
+                                <p class="mb-0 mt-2">One of the main benefits of a 401(k) is employer matching. Many employers will match a portion of your contributions (e.g., 3-6% of your salary), which is essentially free money that can significantly boost your retirement savings over time.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 4 -->
+                        <div class="question" id="question4" style="display: none;">
+                            <h3 class="mb-4">At what age can you generally withdraw from your Roth IRA or 401(k) without penalty (assuming the account has existed for required timeframes)?</h3>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">A.</span> 18
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">B.</span> 30
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="true">
+                                <span class="option-letter">C.</span> 59½
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">D.</span> 72
+                            </div>
+                            
+                            <div class="feedback correct mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Correct!</strong>
+                                </div>
+                                <p class="mb-0 mt-2">In most cases, 59½ is the age at which you can begin penalty-free withdrawals from retirement accounts, though there are some exceptions and special rules.</p>
+                            </div>
+                            
+                            <div class="feedback incorrect mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times-circle me-2"></i>
+                                    <strong>Incorrect</strong>
+                                </div>
+                                <p class="mb-0 mt-2">The age for penalty-free withdrawals from most retirement accounts is 59½. Withdrawals before this age generally incur a 10% penalty (though there are some exceptions).</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 5 -->
+                        <div class="question" id="question5" style="display: none;">
+                            <h3 class="mb-4">True or False: You should consider both tax treatment now (contributions) and in the future (withdrawals) when choosing between a Roth IRA and a traditional 401(k).</h3>
+                            
+                            <div class="quiz-option" data-correct="true">
+                                <span class="option-letter">A.</span> True
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">B.</span> False
+                            </div>
+                            
+                            <div class="feedback correct mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Correct!</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Understanding both your current tax bracket and your expected retirement tax bracket will help you decide which account type is most beneficial. If you expect higher taxes in retirement, a Roth may be better; if you expect lower taxes in retirement, a traditional 401(k) may be better.</p>
+                            </div>
+                            
+                            <div class="feedback incorrect mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times-circle me-2"></i>
+                                    <strong>Incorrect</strong>
+                                </div>
+                                <p class="mb-0 mt-2">It's important to consider both current and future tax implications when choosing retirement accounts. Your tax rate now versus your expected tax rate in retirement should influence whether you choose a Roth IRA (pay taxes now) or traditional 401(k) (pay taxes later).</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Quiz Complete -->
+                        <div id="quizComplete" style="display: none;">
+                            <div class="text-center p-4">
+                                <i class="fas fa-award fa-5x text-warning mb-3"></i>
+                                <h2>Course Complete!</h2>
+                                <p class="lead">You answered <span id="finalScore">0</span> out of 5 questions correctly.</p>
+                                <p>Congratulations on completing all lessons in Stock Basics 101!</p>
+                                <div class="mt-4">
+                                    <a href="lesson3.html" class="btn btn-outline-info me-2">Review Lesson</a>
+                                    <a href="statistics.html" class="btn btn-info">View Your Progress</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation Buttons -->
+                        <div class="d-flex justify-content-between mt-4" id="quizNavigation">
+                            <button id="prevButton" class="btn btn-outline-info" disabled>Previous</button>
+                            <button id="nextButton" class="btn btn-info" disabled>Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Stock Basics 101 2025</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script src="js/quiz3.js"></script>
+</body>
+</html> 

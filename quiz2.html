@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compounding Returns Quiz - Stock Basics 101</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Stock Basics 101</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="statistics.html">Progress</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-light py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center">
+                <h1 class="display-4 fw-bolder">Compounding Returns Quiz</h1>
+                <p class="lead fw-normal text-secondary mb-0">Test your knowledge about compounding returns</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8">
+                    <div class="quiz-container">
+                        <div class="quiz-progress mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span>Question <span id="currentQuestion">1</span> of 5</span>
+                                <span><span id="correctCount">0</span> correct</span>
+                            </div>
+                            <div class="progress">
+                                <div id="quizProgressBar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 1 -->
+                        <div class="question" id="question1">
+                            <h3 class="mb-4">Compounding returns means:</h3>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">A.</span> Earning returns on your principal only.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="true">
+                                <span class="option-letter">B.</span> Earning returns on both your principal and any accumulated returns.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">C.</span> Paying more taxes each year.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">D.</span> None of the above.
+                            </div>
+                            
+                            <div class="feedback correct mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Correct!</strong>
+                                </div>
+                                <p class="mb-0 mt-2">With compounding, your earnings are reinvested, so each new round of returns is calculated on a larger base that includes both your original investment and previously earned returns.</p>
+                            </div>
+                            
+                            <div class="feedback incorrect mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times-circle me-2"></i>
+                                    <strong>Incorrect</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Compounding returns means earning returns on both your principal and any accumulated returns. This creates a snowball effect where growth accelerates over time.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 2 -->
+                        <div class="question" id="question2" style="display: none;">
+                            <h3 class="mb-4">Which of these formulas best represents compound interest?</h3>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">A.</span> A = P + rt
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="true">
+                                <span class="option-letter">B.</span> A = P(1 + r/n)^(nt)
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">C.</span> A = P(1 - r)^(t)
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">D.</span> None of the above.
+                            </div>
+                            
+                            <div class="feedback correct mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Correct!</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Compound interest is calculated using the principal multiplied by one plus the interest rate divided by compounding periods, raised to the total compounding periods over time.</p>
+                            </div>
+                            
+                            <div class="feedback incorrect mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times-circle me-2"></i>
+                                    <strong>Incorrect</strong>
+                                </div>
+                                <p class="mb-0 mt-2">The compound interest formula is A = P(1 + r/n)^(nt), where A is the final amount, P is the principal, r is the interest rate, n is compounding frequency, and t is time in years.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 3 -->
+                        <div class="question" id="question3" style="display: none;">
+                            <h3 class="mb-4">If you start investing earlier, compounding returns are typically:</h3>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">A.</span> Less beneficial because you have more time to lose money.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">B.</span> Unchanged by the time factor.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="true">
+                                <span class="option-letter">C.</span> More beneficial because your money compounds for a longer period.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">D.</span> Irrelevant compared to making a lump sum investment at the end.
+                            </div>
+                            
+                            <div class="feedback correct mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Correct!</strong>
+                                </div>
+                                <p class="mb-0 mt-2">The longer your money is invested, the more time it has to earn returns on top of returns, accelerating growth. This is why starting early is one of the most powerful investing strategies.</p>
+                            </div>
+                            
+                            <div class="feedback incorrect mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times-circle me-2"></i>
+                                    <strong>Incorrect</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Starting to invest earlier is significantly more beneficial because it gives your money more time to compound. Even small amounts invested early can outperform larger amounts invested later due to the power of compound returns over time.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 4 -->
+                        <div class="question" id="question4" style="display: none;">
+                            <h3 class="mb-4">A key difference between simple interest and compound interest is:</h3>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">A.</span> Simple interest pays on principal plus accumulated returns, while compound interest only pays on principal.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="true">
+                                <span class="option-letter">B.</span> Simple interest pays only on principal, while compound interest pays on principal + prior returns.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">C.</span> Simple interest grows faster.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">D.</span> There is no difference.
+                            </div>
+                            
+                            <div class="feedback correct mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Correct!</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Compound interest is more powerful because it reinvests returns, leading to exponential growth over time, unlike simple interest which only calculates returns on the original principal.</p>
+                            </div>
+                            
+                            <div class="feedback incorrect mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times-circle me-2"></i>
+                                    <strong>Incorrect</strong>
+                                </div>
+                                <p class="mb-0 mt-2">With simple interest, you only earn returns on your original principal. With compound interest, you earn returns on both your principal and previously earned returns, which creates accelerating growth over time.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 5 -->
+                        <div class="question" id="question5" style="display: none;">
+                            <h3 class="mb-4">True or False: The compounding frequency (monthly vs. annually) has no effect on the final amount.</h3>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">A.</span> True
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="true">
+                                <span class="option-letter">B.</span> False
+                            </div>
+                            
+                            <div class="feedback correct mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Correct!</strong>
+                                </div>
+                                <p class="mb-0 mt-2">More frequent compounding (e.g., monthly vs. annually) increases the rate at which returns are reinvested, resulting in a higher final amount over time.</p>
+                            </div>
+                            
+                            <div class="feedback incorrect mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times-circle me-2"></i>
+                                    <strong>Incorrect</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Compounding frequency does affect the final amount. More frequent compounding (monthly, daily, etc.) results in higher returns compared to less frequent compounding (annually) because returns are calculated and reinvested more often.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Quiz Complete -->
+                        <div id="quizComplete" style="display: none;">
+                            <div class="text-center p-4">
+                                <i class="fas fa-award fa-5x text-warning mb-3"></i>
+                                <h2>Quiz Complete!</h2>
+                                <p class="lead">You answered <span id="finalScore">0</span> out of 5 questions correctly.</p>
+                                <div class="mt-4">
+                                    <a href="lesson2.html" class="btn btn-outline-success me-2">Review Lesson</a>
+                                    <a href="lesson3.html" class="btn btn-success">Next Lesson: Tax Implications</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation Buttons -->
+                        <div class="d-flex justify-content-between mt-4" id="quizNavigation">
+                            <button id="prevButton" class="btn btn-outline-success" disabled>Previous</button>
+                            <button id="nextButton" class="btn btn-success" disabled>Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Stock Basics 101 2025</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script src="js/quiz2.js"></script>
+</body>
+</html> 

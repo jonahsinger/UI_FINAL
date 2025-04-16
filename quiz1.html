@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diversification Quiz - Stock Basics 101</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Stock Basics 101</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="statistics.html">Progress</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-light py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center">
+                <h1 class="display-4 fw-bolder">Diversification Quiz</h1>
+                <p class="lead fw-normal text-secondary mb-0">Test your knowledge about diversification</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8">
+                    <div class="quiz-container">
+                        <div class="quiz-progress mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span>Question <span id="currentQuestion">1</span> of 5</span>
+                                <span><span id="correctCount">0</span> correct</span>
+                            </div>
+                            <div class="progress">
+                                <div id="quizProgressBar" class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 1 -->
+                        <div class="question" id="question1">
+                            <h3 class="mb-4">What is the main goal of diversification in a portfolio?</h3>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">A.</span> To maximize returns in a single stock.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="true">
+                                <span class="option-letter">B.</span> To reduce overall risk by investing in different assets.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">C.</span> To avoid paying taxes.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">D.</span> To only invest in technology stocks.
+                            </div>
+                            
+                            <div class="feedback correct mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Correct!</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Diversification spreads your investments across various assets or sectors, reducing the impact of any one underperforming investment.</p>
+                            </div>
+                            
+                            <div class="feedback incorrect mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times-circle me-2"></i>
+                                    <strong>Incorrect</strong>
+                                </div>
+                                <p class="mb-0 mt-2">The main goal of diversification is to reduce overall risk by investing in different assets. This way, if one investment performs poorly, the others may help offset the losses.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 2 -->
+                        <div class="question" id="question2" style="display: none;">
+                            <h3 class="mb-4">Which of the following is an example of a diversified portfolio?</h3>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">A.</span> Investing all your money in a single gold mining company.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">B.</span> Investing in multiple tech companies and ignoring all other sectors.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="true">
+                                <span class="option-letter">C.</span> Investing in a mix of stocks from different sectors, plus some bonds.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">D.</span> Keeping all your savings in cash only.
+                            </div>
+                            
+                            <div class="feedback correct mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Correct!</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Spreading funds across different sectors (tech, healthcare, consumer goods, bonds, etc.) is a classic diversification strategy.</p>
+                            </div>
+                            
+                            <div class="feedback incorrect mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times-circle me-2"></i>
+                                    <strong>Incorrect</strong>
+                                </div>
+                                <p class="mb-0 mt-2">A diversified portfolio includes investments across different sectors and asset classes. Investing in a mix of stocks from different sectors, plus some bonds, provides better diversification than concentrating in a single company or sector.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 3 -->
+                        <div class="question" id="question3" style="display: none;">
+                            <h3 class="mb-4">True or False: Diversification guarantees you will never lose money.</h3>
+                            
+                            <div class="quiz-option" data-correct="true">
+                                <span class="option-letter">A.</span> False
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">B.</span> True
+                            </div>
+                            
+                            <div class="feedback correct mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Correct!</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Diversification does not guarantee no losses; it simply helps to mitigate risk. During market-wide downturns, even diversified portfolios may lose value.</p>
+                            </div>
+                            
+                            <div class="feedback incorrect mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times-circle me-2"></i>
+                                    <strong>Incorrect</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Diversification helps reduce risk, but it does not guarantee you will never lose money. In widespread market downturns, even well-diversified portfolios may lose value, though usually less than concentrated portfolios.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 4 -->
+                        <div class="question" id="question4" style="display: none;">
+                            <h3 class="mb-4">If you expect one sector to do exceptionally well, should you put your entire portfolio into that sector?</h3>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">A.</span> Yes, because it maximizes potential gain.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="true">
+                                <span class="option-letter">B.</span> No, because if that sector underperforms, you could face significant losses.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">C.</span> It depends on how lucky you feel.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">D.</span> There's no difference.
+                            </div>
+                            
+                            <div class="feedback correct mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Correct!</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Even if you expect big gains, concentrating solely on one sector increases risk significantly. Market predictions are often wrong, and unexpected events can cause sectors to underperform.</p>
+                            </div>
+                            
+                            <div class="feedback incorrect mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times-circle me-2"></i>
+                                    <strong>Incorrect</strong>
+                                </div>
+                                <p class="mb-0 mt-2">While putting everything in one sector might maximize potential returns if your prediction is correct, it also maximizes your risk. If that sector underperforms (which happens frequently, even to experts), you could face significant losses. Diversification provides more balanced outcomes.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 5 -->
+                        <div class="question" id="question5" style="display: none;">
+                            <h3 class="mb-4">Diversification can involve:</h3>
+                            
+                            <div class="quiz-option" data-correct="true">
+                                <span class="option-letter">A.</span> Different companies, sectors, or even asset classes.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">B.</span> Only high-growth stocks.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">C.</span> Only dividend-paying stocks.
+                            </div>
+                            
+                            <div class="quiz-option" data-correct="false">
+                                <span class="option-letter">D.</span> None of the above.
+                            </div>
+                            
+                            <div class="feedback correct mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Correct!</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Diversification often includes different company sizes, industries, and asset classes like bonds, real estate, or cash-like instruments.</p>
+                            </div>
+                            
+                            <div class="feedback incorrect mt-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-times-circle me-2"></i>
+                                    <strong>Incorrect</strong>
+                                </div>
+                                <p class="mb-0 mt-2">Diversification involves spreading investments across different companies, sectors, and asset classes (stocks, bonds, real estate, etc.). Focusing only on one type of investment (like high-growth or dividend stocks) doesn't provide true diversification.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Quiz Complete -->
+                        <div id="quizComplete" style="display: none;">
+                            <div class="text-center p-4">
+                                <i class="fas fa-award fa-5x text-warning mb-3"></i>
+                                <h2>Quiz Complete!</h2>
+                                <p class="lead">You answered <span id="finalScore">0</span> out of 5 questions correctly.</p>
+                                <div class="mt-4">
+                                    <a href="lesson1.html" class="btn btn-outline-primary me-2">Review Lesson</a>
+                                    <a href="lesson2.html" class="btn btn-primary">Next Lesson: Compounding Returns</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation Buttons -->
+                        <div class="d-flex justify-content-between mt-4" id="quizNavigation">
+                            <button id="prevButton" class="btn btn-outline-primary" disabled>Previous</button>
+                            <button id="nextButton" class="btn btn-primary" disabled>Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Stock Basics 101 2025</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script src="js/quiz1.js"></script>
+</body>
+</html> 
