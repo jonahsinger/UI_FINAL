@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Fundamentals</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Personal Finance Fundamentals</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/lesson/1">Lesson 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/lesson/2">Lesson 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/lesson/3">Lesson 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/statistics">Statistics</a>
+                    </li>
+                </ul>
+                <div class="d-flex auth-buttons">
+                    <a href="/login" class="btn btn-outline-light me-2 login-btn">Login</a>
+                    <a href="/register" class="btn btn-light register-btn">Register</a>
+                    <button class="btn btn-outline-light d-none logout-btn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="bg-light py-5">
+        <div class="container px-5">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-10">
+                    <div class="text-center my-5">
+                        <h1 class="display-5 fw-bold">Welcome to Personal Finance Fundamentals</h1>
+                        <p class="lead mb-4">Learn the essential skills to manage your finances effectively with our interactive lessons on investing, budgeting, and debt management.</p>
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                            <a href="/lesson/1" class="btn btn-primary btn-lg px-4 me-sm-3">Start Learning</a>
+                            <a href="/statistics" class="btn btn-outline-secondary btn-lg px-4">View Progress</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Course Overview Section -->
+    <section class="py-5">
+        <div class="container px-5">
+            <h2 class="text-center mb-5">Course Overview</h2>
+            <div class="row g-4">
+                <!-- Lesson 1 Card -->
+                <div class="col-lg-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="my-0">Lesson 1</h4>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Investment Basics</h5>
+                            <p class="card-text">Learn the fundamentals of investing, including key terminology and strategies for beginners.</p>
+                            <div class="progress mt-3 mb-2">
+                                <div id="lesson1Progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mb-0"><small id="lesson1Status">Status: Not started</small></p>
+                            <p><small>Quiz Score: <span id="lesson1QuizScore">0</span>/5</small></p>
+                            <a href="/lesson/1" class="btn btn-outline-primary mt-auto">Start Lesson</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lesson 2 Card -->
+                <div class="col-lg-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="my-0">Lesson 2</h4>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Compound Interest</h5>
+                            <p class="card-text">Discover the power of compound interest and how it can dramatically grow your wealth over time.</p>
+                            <div class="progress mt-3 mb-2">
+                                <div id="lesson2Progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mb-0"><small id="lesson2Status">Status: Not started</small></p>
+                            <p><small>Quiz Score: <span id="lesson2QuizScore">0</span>/5</small></p>
+                            <a href="/lesson/2" class="btn btn-outline-primary mt-auto">Start Lesson</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lesson 3 Card -->
+                <div class="col-lg-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="my-0">Lesson 3</h4>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Debt Management</h5>
+                            <p class="card-text">Learn effective strategies for managing debt, including prioritization methods and payoff calculators.</p>
+                            <div class="progress mt-3 mb-2">
+                                <div id="lesson3Progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mb-0"><small id="lesson3Status">Status: Not started</small></p>
+                            <p><small>Quiz Score: <span id="lesson3QuizScore">0</span>/5</small></p>
+                            <a href="/lesson/3" class="btn btn-outline-primary mt-auto">Start Lesson</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Overview -->
+    <section class="py-5 bg-light">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Your Learning Progress</h2>
+                    <p class="lead">Track your journey to financial literacy with our interactive progress tracker.</p>
+                    <p>Overall Completion: <span class="fw-bold" id="totalProgressDisplay">0%</span></p>
+                    <a href="/statistics" class="btn btn-primary">View Detailed Statistics</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="rounded shadow p-3 bg-white">
+                        <canvas id="progressChart" height="250"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white">
+        <div class="container px-5">
+            <div class="row">
+                <div class="col-lg-6 mb-3 mb-lg-0">
+                    <p class="mb-0">&copy; 2023 Personal Finance Fundamentals. All rights reserved.</p>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <button id="resetProgressBtn" class="btn btn-sm btn-outline-light">Reset Progress</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/statistics.js') }}"></script>
+</body>
+</html> 

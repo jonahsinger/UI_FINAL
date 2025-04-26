@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt Management - Personal Finance Fundamentals</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('main.index') }}">Personal Finance Fundamentals</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.lesson', lesson_number=1) }}">Lesson 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.lesson', lesson_number=2) }}">Lesson 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('main.lesson', lesson_number=3) }}">Lesson 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.statistics') }}">Statistics</a>
+                    </li>
+                </ul>
+                <div class="d-flex" id="auth-buttons">
+                    <!-- Auth buttons will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Lesson Content -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h1 class="h3 mb-0">Lesson 3: Debt Management</h1>
+                    </div>
+                    <div class="card-body lesson-content">
+                        <h2>Understanding and Managing Debt</h2>
+                        <p>While debt is often viewed negatively, it's important to understand that not all debt is created equal. When managed responsibly, debt can be a useful tool to achieve financial goals, such as buying a home or financing an education.</p>
+                        
+                        <div class="definition-box mb-4">
+                            <h5>Key Terms:</h5>
+                            <ul>
+                                <li><strong>Good Debt:</strong> Debt that potentially increases your net worth or generates long-term income (e.g., mortgage, student loans).</li>
+                                <li><strong>Bad Debt:</strong> Debt used to purchase depreciating assets or consumables (e.g., high-interest credit card debt).</li>
+                                <li><strong>Interest Rate:</strong> The percentage of the principal that a lender charges for the use of their money.</li>
+                                <li><strong>Minimum Payment:</strong> The smallest amount you must pay each month to keep a loan in good standing.</li>
+                            </ul>
+                        </div>
+                        
+                        <h2>Smart Debt Repayment Strategies</h2>
+                        <p>If you're juggling multiple debts, having a strategy can make the process more efficient and potentially save you money. Here are two popular approaches:</p>
+                        
+                        <h3>1. Debt Avalanche Method</h3>
+                        <p>With this method, you pay minimum payments on all debts, then put any extra money toward the debt with the highest interest rate first. Once that debt is paid off, you move to the debt with the next highest interest rate, and so on.</p>
+                        
+                        <h4>Advantages:</h4>
+                        <ul>
+                            <li>Saves the most money in interest over time</li>
+                            <li>Most mathematically efficient approach</li>
+                        </ul>
+                        
+                        <h3>2. Debt Snowball Method</h3>
+                        <p>With this method, you pay minimum payments on all debts, then put any extra money toward the debt with the smallest balance first. Once that debt is paid off, you move to the debt with the next smallest balance, and so on.</p>
+                        
+                        <h4>Advantages:</h4>
+                        <ul>
+                            <li>Creates early wins as smaller debts are paid off quickly</li>
+                            <li>Provides psychological motivation to continue the debt payoff journey</li>
+                            <li>May be more effective for those who are motivated by visible progress</li>
+                        </ul>
+                        
+                        <div class="alert alert-info my-4">
+                            <h5>Which Method Should You Choose?</h5>
+                            <p class="mb-0">Choose the Avalanche method if you want to save the most money. Choose the Snowball method if you need the motivation of early wins to stay on track. The best strategy is the one you'll stick with consistently.</p>
+                        </div>
+                        
+                        <h2>Debt Payoff Calculator</h2>
+                        <p>Use this calculator to compare the Avalanche and Snowball methods for your specific debts:</p>
+                        
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <form id="debt-calculator">
+                                    <div class="mb-3">
+                                        <label for="monthly-payment" class="form-label">Total Monthly Payment</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">$</span>
+                                            <input type="number" class="form-control" id="monthly-payment" value="500" min="0" step="10">
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="debts-container">
+                                        <h5 class="mb-3">Your Debts</h5>
+                                        
+                                        <!-- Debt 1 -->
+                                        <div class="debt-entry card p-3 mb-3">
+                                            <div class="row g-2">
+                                                <div class="col-md-3">
+                                                    <label class="form-label">Debt Name</label>
+                                                    <input type="text" class="form-control debt-name" value="Credit Card 1">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label class="form-label">Balance ($)</label>
+                                                    <input type="number" class="form-control debt-balance" value="5000" min="1" step="10">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label class="form-label">Interest Rate (%)</label>
+                                                    <input type="number" class="form-control debt-rate" value="18.99" min="0" step="0.01">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label class="form-label">Min. Payment ($)</label>
+                                                    <input type="number" class="form-control debt-min" value="100" min="1" step="1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Debt 2 -->
+                                        <div class="debt-entry card p-3 mb-3">
+                                            <div class="row g-2">
+                                                <div class="col-md-3">
+                                                    <label class="form-label">Debt Name</label>
+                                                    <input type="text" class="form-control debt-name" value="Car Loan">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label class="form-label">Balance ($)</label>
+                                                    <input type="number" class="form-control debt-balance" value="15000" min="1" step="10">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label class="form-label">Interest Rate (%)</label>
+                                                    <input type="number" class="form-control debt-rate" value="4.5" min="0" step="0.01">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label class="form-label">Min. Payment ($)</label>
+                                                    <input type="number" class="form-control debt-min" value="250" min="1" step="1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <button type="button" class="btn btn-outline-secondary" id="add-debt-btn">Add Another Debt</button>
+                                        <button type="button" class="btn btn-primary" id="calculate-debt-btn">Calculate Payoff Plan</button>
+                                    </div>
+                                </form>
+                                
+                                <div id="results-area" class="mt-4 d-none">
+                                    <h4 class="text-center mb-4">Results Comparison</h4>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <div class="card-header bg-primary text-white">
+                                                    <h5 class="mb-0">Avalanche Method</h5>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p><strong>Total Interest Paid:</strong> <span id="avalanche-interest" class="text-danger">$0</span></p>
+                                                    <p><strong>Total Time to Payoff:</strong> <span id="avalanche-time">0 months</span></p>
+                                                    <p><strong>Debt-Free Date:</strong> <span id="avalanche-date">N/A</span></p>
+                                                    <hr>
+                                                    <div id="avalanche-order"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <div class="card-header bg-success text-white">
+                                                    <h5 class="mb-0">Snowball Method</h5>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p><strong>Total Interest Paid:</strong> <span id="snowball-interest" class="text-danger">$0</span></p>
+                                                    <p><strong>Total Time to Payoff:</strong> <span id="snowball-time">0 months</span></p>
+                                                    <p><strong>Debt-Free Date:</strong> <span id="snowball-date">N/A</span></p>
+                                                    <hr>
+                                                    <div id="snowball-order"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h5 class="text-center mb-3">Total Interest Comparison</h5>
+                                            <canvas id="interest-chart" height="250"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h2>Additional Debt Management Tips</h2>
+                        <ul>
+                            <li><strong>Create a budget</strong> to understand your income and expenses</li>
+                            <li><strong>Build an emergency fund</strong> to avoid taking on new debt when unexpected expenses arise</li>
+                            <li><strong>Consider debt consolidation</strong> if you have multiple high-interest debts</li>
+                            <li><strong>Negotiate with creditors</strong> for lower interest rates or payment plans</li>
+                            <li><strong>Avoid taking on new debt</strong> while paying off existing debt</li>
+                        </ul>
+                        
+                        <div class="alert alert-warning mt-4">
+                            <h4>Warning Signs of Debt Problems:</h4>
+                            <ul class="mb-0">
+                                <li>Only making minimum payments on credit cards</li>
+                                <li>Using credit cards for essential expenses like groceries</li>
+                                <li>Using one form of credit to pay off another</li>
+                                <li>Being denied credit or loans</li>
+                                <li>Anxiety or stress about financial situation</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="text-center my-4">
+                            <a href="{{ url_for('main.quiz', lesson_number=3) }}" class="btn btn-primary btn-lg">Take the Quiz</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white">
+        <div class="container px-5">
+            <div class="row">
+                <div class="col-lg-6 mb-3 mb-lg-0">
+                    <p class="mb-0">&copy; 2023 Personal Finance Fundamentals. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            // Add debt button functionality
+            $('#add-debt-btn').on('click', function() {
+                const newDebt = `
+                    <div class="debt-entry card p-3 mb-3">
+                        <div class="row g-2">
+                            <div class="col-md-3">
+                                <label class="form-label">Debt Name</label>
+                                <input type="text" class="form-control debt-name" value="New Debt">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Balance ($)</label>
+                                <input type="number" class="form-control debt-balance" value="1000" min="1" step="10">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Interest Rate (%)</label>
+                                <input type="number" class="form-control debt-rate" value="10" min="0" step="0.01">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Min. Payment ($)</label>
+                                <input type="number" class="form-control debt-min" value="50" min="1" step="1">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-danger mt-2 remove-debt-btn">Remove Debt</button>
+                    </div>
+                `;
+                $('#debts-container').append(newDebt);
+                
+                // Add event listener to new remove button
+                $('.remove-debt-btn').on('click', function() {
+                    $(this).closest('.debt-entry').remove();
+                });
+            });
+            
+            // Calculate button functionality
+            $('#calculate-debt-btn').on('click', function() {
+                // Get input values
+                const monthlyPayment = parseFloat($('#monthly-payment').val());
+                
+                // Collect debt information
+                const debts = [];
+                $('.debt-entry').each(function() {
+                    debts.push({
+                        name: $(this).find('.debt-name').val(),
+                        balance: parseFloat($(this).find('.debt-balance').val()),
+                        rate: parseFloat($(this).find('.debt-rate').val()) / 100, // Convert to decimal
+                        minPayment: parseFloat($(this).find('.debt-min').val())
+                    });
+                });
+                
+                // Check if total minimum payments exceed monthly payment
+                const totalMinPayments = debts.reduce((sum, debt) => sum + debt.minPayment, 0);
+                if (totalMinPayments > monthlyPayment) {
+                    alert('Your total minimum payments exceed your monthly payment amount. Please adjust your values.');
+                    return;
+                }
+                
+                // Calculate avalanche method (highest interest rate first)
+                const avalancheResults = calculateDebtPayoff([...debts].sort((a, b) => b.rate - a.rate), monthlyPayment);
+                
+                // Calculate snowball method (lowest balance first)
+                const snowballResults = calculateDebtPayoff([...debts].sort((a, b) => a.balance - b.balance), monthlyPayment);
+                
+                // Display results
+                displayResults(avalancheResults, snowballResults, debts);
+                
+                // Show results area
+                $('#results-area').removeClass('d-none');
+            });
+            
+            // Calculate debt payoff
+            function calculateDebtPayoff(sortedDebts, monthlyPayment) {
+                // Create deep copy of the debts to work with
+                const workingDebts = JSON.parse(JSON.stringify(sortedDebts));
+                
+                let months = 0;
+                let totalInterestPaid = 0;
+                const payoffOrder = [];
+                
+                while (workingDebts.length > 0) {
+                    months++;
+                    
+                    // Calculate how much payment is left after minimum payments
+                    let remainingPayment = monthlyPayment;
+                    workingDebts.forEach(debt => {
+                        remainingPayment -= debt.minPayment;
+                    });
+                    
+                    // Apply payments to each debt
+                    for (let i = 0; i < workingDebts.length; i++) {
+                        const debt = workingDebts[i];
+                        
+                        // Calculate interest for this month
+                        const monthlyInterest = debt.balance * (debt.rate / 12);
+                        totalInterestPaid += monthlyInterest;
+                        
+                        // Add interest to balance
+                        debt.balance += monthlyInterest;
+                        
+                        // Apply minimum payment
+                        let payment = debt.minPayment;
+                        
+                        // If this is the highest priority debt (index 0), add the extra payment
+                        if (i === 0 && remainingPayment > 0) {
+                            payment += remainingPayment;
+                        }
+                        
+                        // Apply payment to balance
+                        debt.balance -= payment;
+                        
+                        // If debt is paid off, record it
+                        if (debt.balance <= 0) {
+                            payoffOrder.push({
+                                name: debt.name,
+                                month: months
+                            });
+                            
+                            // If there's money left from overpayment, add it back to remaining payment
+                            if (debt.balance < 0) {
+                                remainingPayment = Math.abs(debt.balance);
+                                debt.balance = 0;
+                            } else {
+                                remainingPayment = 0;
+                            }
+                        }
+                    }
+                    
+                    // Remove paid off debts
+                    for (let i = workingDebts.length - 1; i >= 0; i--) {
+                        if (workingDebts[i].balance <= 0) {
+                            workingDebts.splice(i, 1);
+                        }
+                    }
+                }
+                
+                return {
+                    months: months,
+                    totalInterest: totalInterestPaid,
+                    payoffOrder: payoffOrder
+                };
+            }
+            
+            // Display results in the UI
+            function displayResults(avalancheResults, snowballResults, originalDebts) {
+                // Format currency
+                const formatCurrency = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                    minimumFractionDigits: 2
+                });
+                
+                // Display avalanche results
+                $('#avalanche-interest').text(formatCurrency.format(avalancheResults.totalInterest));
+                $('#avalanche-time').text(`${avalancheResults.months} months (${Math.floor(avalancheResults.months / 12)} years, ${avalancheResults.months % 12} months)`);
+                
+                // Calculate debt-free date
+                const avalancheDate = new Date();
+                avalancheDate.setMonth(avalancheDate.getMonth() + avalancheResults.months);
+                $('#avalanche-date').text(avalancheDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long' }));
+                
+                // Display snowball results
+                $('#snowball-interest').text(formatCurrency.format(snowballResults.totalInterest));
+                $('#snowball-time').text(`${snowballResults.months} months (${Math.floor(snowballResults.months / 12)} years, ${snowballResults.months % 12} months)`);
+                
+                // Calculate debt-free date
+                const snowballDate = new Date();
+                snowballDate.setMonth(snowballDate.getMonth() + snowballResults.months);
+                $('#snowball-date').text(snowballDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long' }));
+                
+                // Create payoff order HTML
+                let avalancheOrderHtml = '<h6>Payoff Order:</h6><ol>';
+                avalancheResults.payoffOrder.forEach(debt => {
+                    avalancheOrderHtml += `<li>${debt.name} (paid off in month ${debt.month})</li>`;
+                });
+                avalancheOrderHtml += '</ol>';
+                $('#avalanche-order').html(avalancheOrderHtml);
+                
+                let snowballOrderHtml = '<h6>Payoff Order:</h6><ol>';
+                snowballResults.payoffOrder.forEach(debt => {
+                    snowballOrderHtml += `<li>${debt.name} (paid off in month ${debt.month})</li>`;
+                });
+                snowballOrderHtml += '</ol>';
+                $('#snowball-order').html(snowballOrderHtml);
+                
+                // Create chart
+                const ctx = document.getElementById('interest-chart').getContext('2d');
+                
+                // Destroy existing chart if it exists
+                if (window.interestChart) {
+                    window.interestChart.destroy();
+                }
+                
+                window.interestChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Avalanche Method', 'Snowball Method'],
+                        datasets: [{
+                            label: 'Total Interest Paid',
+                            data: [avalancheResults.totalInterest, snowballResults.totalInterest],
+                            backgroundColor: [
+                                'rgba(54, 162, 235, 0.5)',
+                                'rgba(75, 192, 192, 0.5)'
+                            ],
+                            borderColor: [
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(75, 192, 192, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return formatCurrency.format(value);
+                                    }
+                                }
+                            }
+                        },
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return formatCurrency.format(context.raw);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+                
+                // Highlight the better method
+                if (avalancheResults.totalInterest < snowballResults.totalInterest) {
+                    $('#avalanche-interest').closest('.card').addClass('border-primary');
+                } else {
+                    $('#snowball-interest').closest('.card').addClass('border-success');
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Basics - Personal Finance Fundamentals</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('main.index') }}">Personal Finance Fundamentals</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('main.lesson', lesson_number=1) }}">Lesson 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.lesson', lesson_number=2) }}">Lesson 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.lesson', lesson_number=3) }}">Lesson 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.statistics') }}">Statistics</a>
+                    </li>
+                </ul>
+                <div class="d-flex" id="auth-buttons">
+                    <!-- Auth buttons will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Lesson Content -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h1 class="h3 mb-0">Lesson 1: Investment Basics</h1>
+                    </div>
+                    <div class="card-body lesson-content">
+                        <h2>Introduction to Investing</h2>
+                        <p>Investing is the process of allocating resources, usually money, with the expectation of generating income or profit over time. Unlike saving, which involves putting money aside for future use with minimal risk, investing involves some level of risk in pursuit of potentially higher returns.</p>
+                        
+                        <div class="definition-box mb-4">
+                            <h5>Key Terms:</h5>
+                            <ul>
+                                <li><strong>Asset:</strong> Anything of value that can be converted into cash.</li>
+                                <li><strong>Return:</strong> The gain or loss on an investment over a specified period.</li>
+                                <li><strong>Risk:</strong> The possibility of losing some or all of an investment.</li>
+                            </ul>
+                        </div>
+                        
+                        <h2>Types of Investments</h2>
+                        <p>There are several types of investments available to individuals, each with their own risk profiles and potential returns:</p>
+                        
+                        <h3>1. Stocks</h3>
+                        <p>When you buy a stock, you're purchasing a small piece of ownership in a company. Stocks offer the potential for high returns but also come with higher risk.</p>
+                        
+                        <h3>2. Bonds</h3>
+                        <p>Bonds are loans made to a corporation or government. The borrower agrees to pay back the loan with interest by a specific date. Bonds typically offer lower returns than stocks but with less risk.</p>
+                        
+                        <h3>3. Mutual Funds</h3>
+                        <p>Mutual funds pool money from many investors to buy a diversified portfolio of stocks, bonds, or other securities. They offer diversification and professional management.</p>
+                        
+                        <h3>4. Exchange-Traded Funds (ETFs)</h3>
+                        <p>Similar to mutual funds, ETFs are collections of securities that track an underlying index. They trade like stocks throughout the day and typically have lower fees than mutual funds.</p>
+                        
+                        <h2>Investment Principles</h2>
+                        <h3>Diversification</h3>
+                        <p>Don't put all your eggs in one basket. Spreading investments across different asset classes can help reduce risk.</p>
+                        
+                        <h3>Long-Term Approach</h3>
+                        <p>Historically, the stock market has provided positive returns over long periods despite short-term volatility.</p>
+                        
+                        <h3>Start Early</h3>
+                        <p>Thanks to compound interest, time is one of the most powerful factors in building wealth.</p>
+                        
+                        <div class="alert alert-info mt-4">
+                            <h4>Remember:</h4>
+                            <p>All investments involve some degree of risk. Understanding your risk tolerance is essential for developing an investment strategy that works for you.</p>
+                        </div>
+                        
+                        <div class="text-center my-4">
+                            <a href="{{ url_for('main.quiz', lesson_number=1) }}" class="btn btn-primary btn-lg">Take the Quiz</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white">
+        <div class="container px-5">
+            <div class="row">
+                <div class="col-lg-6 mb-3 mb-lg-0">
+                    <p class="mb-0">&copy; 2023 Personal Finance Fundamentals. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
