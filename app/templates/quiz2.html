@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz: Compound Interest - Personal Finance Fundamentals</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('main.index') }}">Personal Finance Fundamentals</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.lesson', lesson_number=1) }}">Lesson 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('main.lesson', lesson_number=2) }}">Lesson 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.lesson', lesson_number=3) }}">Lesson 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.statistics') }}">Statistics</a>
+                    </li>
+                </ul>
+                <div class="d-flex" id="auth-buttons">
+                    <!-- Auth buttons will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Quiz Content -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h1 class="h3 mb-0">Quiz: Compound Interest</h1>
+                    </div>
+                    <div class="card-body" id="quiz-container">
+                        <div id="quiz-progress" class="mb-4">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 0%" id="quiz-progress-bar"></div>
+                            </div>
+                            <p class="text-end mt-2"><small>Question <span id="current-question">1</span> of 5</small></p>
+                        </div>
+                        
+                        <!-- Question 1 -->
+                        <div class="quiz-question" id="question-1">
+                            <h4>1. What is compound interest?</h4>
+                            <div class="quiz-options">
+                                <div class="quiz-option" data-correct="false">
+                                    <p>Interest calculated only on the initial principal amount</p>
+                                </div>
+                                <div class="quiz-option" data-correct="true">
+                                    <p>Interest calculated on both the initial principal and the accumulated interest</p>
+                                </div>
+                                <div class="quiz-option" data-correct="false">
+                                    <p>A fixed amount of interest paid monthly</p>
+                                </div>
+                                <div class="quiz-option" data-correct="false">
+                                    <p>Interest that is paid only at the end of an investment term</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 2 -->
+                        <div class="quiz-question d-none" id="question-2">
+                            <h4>2. Using the Rule of 72, approximately how long would it take to double your money at an annual interest rate of 6%?</h4>
+                            <div class="quiz-options">
+                                <div class="quiz-option" data-correct="false">
+                                    <p>6 years</p>
+                                </div>
+                                <div class="quiz-option" data-correct="true">
+                                    <p>12 years</p>
+                                </div>
+                                <div class="quiz-option" data-correct="false">
+                                    <p>18 years</p>
+                                </div>
+                                <div class="quiz-option" data-correct="false">
+                                    <p>24 years</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 3 -->
+                        <div class="quiz-question d-none" id="question-3">
+                            <h4>3. If you have $1,000 and earn 8% compound interest annually, approximately how much will you have after 9 years?</h4>
+                            <div class="quiz-options">
+                                <div class="quiz-option" data-correct="false">
+                                    <p>$1,720</p>
+                                </div>
+                                <div class="quiz-option" data-correct="false">
+                                    <p>$1,800</p>
+                                </div>
+                                <div class="quiz-option" data-correct="true">
+                                    <p>$2,000</p>
+                                </div>
+                                <div class="quiz-option" data-correct="false">
+                                    <p>$2,160</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 4 -->
+                        <div class="quiz-question d-none" id="question-4">
+                            <h4>4. Which compounding frequency would yield the highest returns over time?</h4>
+                            <div class="quiz-options">
+                                <div class="quiz-option" data-correct="false">
+                                    <p>Annual compounding</p>
+                                </div>
+                                <div class="quiz-option" data-correct="false">
+                                    <p>Quarterly compounding</p>
+                                </div>
+                                <div class="quiz-option" data-correct="false">
+                                    <p>Monthly compounding</p>
+                                </div>
+                                <div class="quiz-option" data-correct="true">
+                                    <p>Daily compounding</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 5 -->
+                        <div class="quiz-question d-none" id="question-5">
+                            <h4>5. Why is starting to invest early so important for compound interest?</h4>
+                            <div class="quiz-options">
+                                <div class="quiz-option" data-correct="false">
+                                    <p>Because interest rates are always higher for younger investors</p>
+                                </div>
+                                <div class="quiz-option" data-correct="false">
+                                    <p>Because investment fees are lower for long-term investors</p>
+                                </div>
+                                <div class="quiz-option" data-correct="true">
+                                    <p>Because the longer time period allows compound interest to have a greater effect</p>
+                                </div>
+                                <div class="quiz-option" data-correct="false">
+                                    <p>Because it's easier to understand financial concepts when you're younger</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Quiz Results (initially hidden) -->
+                        <div id="quiz-results" class="text-center p-4 d-none">
+                            <h3>Quiz Results</h3>
+                            <p class="lead">You got <span id="correct-answers">0</span> out of 5 questions correct!</p>
+                            <div class="result-message my-4"></div>
+                            <div class="d-grid gap-2 col-md-6 mx-auto">
+                                <a href="{{ url_for('main.lesson', lesson_number=2) }}" class="btn btn-outline-primary">Review Lesson</a>
+                                <a href="{{ url_for('main.lesson', lesson_number=3) }}" class="btn btn-primary">Next Lesson</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Quiz Navigation -->
+                        <div class="d-flex justify-content-between mt-4" id="quiz-nav">
+                            <button class="btn btn-outline-secondary d-none" id="prev-btn">Previous</button>
+                            <button class="btn btn-primary" id="next-btn">Next</button>
+                            <button class="btn btn-success d-none" id="submit-btn">Submit Quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white">
+        <div class="container px-5">
+            <div class="row">
+                <div class="col-lg-6 mb-3 mb-lg-0">
+                    <p class="mb-0">&copy; 2023 Personal Finance Fundamentals. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            let currentQuestion = 1;
+            let totalQuestions = 5;
+            let correctAnswers = 0;
+            let selectedAnswers = {};
+            
+            // Update progress bar
+            function updateProgress() {
+                let progress = ((currentQuestion - 1) / totalQuestions) * 100;
+                $('#quiz-progress-bar').css('width', progress + '%');
+                $('#current-question').text(currentQuestion);
+                
+                // Handle button visibility
+                if (currentQuestion > 1) {
+                    $('#prev-btn').removeClass('d-none');
+                } else {
+                    $('#prev-btn').addClass('d-none');
+                }
+                
+                if (currentQuestion === totalQuestions) {
+                    $('#next-btn').addClass('d-none');
+                    $('#submit-btn').removeClass('d-none');
+                } else {
+                    $('#next-btn').removeClass('d-none');
+                    $('#submit-btn').addClass('d-none');
+                }
+            }
+            
+            // Handle option selection
+            $('.quiz-option').on('click', function() {
+                // Remove selected class from all options in the current question
+                $(this).parent().find('.quiz-option').removeClass('selected');
+                // Add selected class to clicked option
+                $(this).addClass('selected');
+                // Store the answer
+                selectedAnswers[currentQuestion] = {
+                    selected: $(this),
+                    isCorrect: $(this).data('correct')
+                };
+            });
+            
+            // Handle next button
+            $('#next-btn').on('click', function() {
+                if (currentQuestion < totalQuestions) {
+                    // Hide current question
+                    $('#question-' + currentQuestion).addClass('d-none');
+                    // Show next question
+                    currentQuestion++;
+                    $('#question-' + currentQuestion).removeClass('d-none');
+                    // Update progress
+                    updateProgress();
+                }
+            });
+            
+            // Handle previous button
+            $('#prev-btn').on('click', function() {
+                if (currentQuestion > 1) {
+                    // Hide current question
+                    $('#question-' + currentQuestion).addClass('d-none');
+                    // Show previous question
+                    currentQuestion--;
+                    $('#question-' + currentQuestion).removeClass('d-none');
+                    // Update progress
+                    updateProgress();
+                }
+            });
+            
+            // Handle submit button
+            $('#submit-btn').on('click', function() {
+                // Count correct answers
+                correctAnswers = 0;
+                for (let i = 1; i <= totalQuestions; i++) {
+                    if (selectedAnswers[i] && selectedAnswers[i].isCorrect) {
+                        correctAnswers++;
+                    }
+                }
+                
+                // Display results
+                $('#correct-answers').text(correctAnswers);
+                
+                // Set result message
+                let resultMessage = '';
+                if (correctAnswers === 5) {
+                    resultMessage = '<div class="alert alert-success">Perfect score! You have an excellent understanding of compound interest.</div>';
+                } else if (correctAnswers >= 3) {
+                    resultMessage = '<div class="alert alert-info">Good job! You have a solid understanding of compound interest.</div>';
+                } else {
+                    resultMessage = '<div class="alert alert-warning">You might want to review the lesson again to strengthen your understanding.</div>';
+                }
+                $('.result-message').html(resultMessage);
+                
+                // Hide quiz questions and navigation
+                $('.quiz-question').addClass('d-none');
+                $('#quiz-nav').addClass('d-none');
+                $('#quiz-progress').addClass('d-none');
+                
+                // Show results
+                $('#quiz-results').removeClass('d-none');
+                
+                // Store quiz score in API if logged in
+                $.ajax({
+                    url: '/api/quiz/score',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        lessonNumber: 2,
+                        score: correctAnswers
+                    }),
+                    success: function(response) {
+                        console.log('Quiz score saved successfully');
+                    },
+                    error: function() {
+                        console.log('Error saving quiz score');
+                    }
+                });
+            });
+            
+            // Initialize progress bar
+            updateProgress();
+        });
+    </script>
+</body>
+</html> 

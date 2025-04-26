@@ -45,10 +45,10 @@
                         <h2 class="mb-4">What are Compounding Returns?</h2>
                         
                         <div class="definition-box mb-4">
-                            <strong>Definition:</strong> Compounding occurs when the returns (interest, dividends, capital gains) you earn on your investments are reinvested to generate additional returns over time.
+                            <strong>Definition:</strong> Compounding occurs when the returns you earn are reinvested to generate additional returns over time.
                         </div>
                         
-                        <p>Compound returns are often called the "eighth wonder of the world" because of how they can dramatically accelerate wealth creation over time. With compounding, your money makes money, and then that money makes even more money.</p>
+                        <p>With compounding, your money makes money, and then that money makes even more money.</p>
                         
                         <p>The key to compounding is:</p>
                         <ul>
@@ -58,8 +58,89 @@
                         </ul>
                         
                         <div class="text-center my-5">
-                            <img src="img/compounding-concept.png" alt="Compounding Returns Concept - Snowball Effect" class="lesson-image img-fluid">
+                            <img src="img/snow.png" alt="Compounding Returns Concept - Snowball Effect" class="lesson-image img-fluid">
                             <p class="text-muted mt-2"><small>Compounding creates a snowball effect where growth accelerates over time</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interactive Element -->
+            <div class="row gx-4 gx-lg-5 justify-content-center mt-4">
+                <div class="col-lg-10">
+                    <div class="lesson-content">
+                        <h2 class="mb-4">Compound Interest Calculator</h2>
+                        
+                        <div class="interactive-element">
+                            <h4 class="text-center mb-4">Explore the Power of Compounding</h4>
+                            
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="mb-3">
+                                        <label for="initialInvestment" class="form-label">Initial Investment ($)</label>
+                                        <input type="number" class="form-control" id="initialInvestment" min="1" value="1000">
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="annualRate" class="form-label">Annual Interest Rate (%)</label>
+                                        <input type="number" class="form-control" id="annualRate" min="0.1" max="50" step="0.1" value="7">
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="timeYears" class="form-label">Investment Time (Years)</label>
+                                        <input type="range" class="form-range" id="timeYears" min="1" max="50" value="10">
+                                        <div class="d-flex justify-content-between">
+                                            <span>1</span>
+                                            <span id="timeValue">10</span>
+                                            <span>50</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="compoundFrequency" class="form-label">Compounding Frequency</label>
+                                        <select class="form-select" id="compoundFrequency">
+                                            <option value="1">Annually</option>
+                                            <option value="2">Semi-annually</option>
+                                            <option value="4">Quarterly</option>
+                                            <option value="12" selected>Monthly</option>
+                                            <option value="365">Daily</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-7">
+                                    <div class="bg-light p-4 rounded h-100">
+                                        <h5 class="text-center">Results</h5>
+                                        
+                                        <div class="text-center my-4">
+                                            <h3 class="text-success mb-0">$<span id="finalValue">0</span></h3>
+                                            <p class="text-muted">Final Value</p>
+                                        </div>
+                                        
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <h5>$<span id="principalAmount">1000</span></h5>
+                                                <p class="text-muted">Principal</p>
+                                            </div>
+                                            <div>
+                                                <h5>$<span id="interestEarned">0</span></h5>
+                                                <p class="text-muted">Interest Earned</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mt-3">
+                                            <div class="progress" style="height: 24px;">
+                                                <div id="principalBar" class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+                                                <div id="interestBar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+                                            </div>
+                                            <div class="d-flex justify-content-between mt-2">
+                                                <small>Principal</small>
+                                                <small>Interest</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -157,177 +238,6 @@
             </div>
             
             <!-- Examples -->
-            <div class="row gx-4 gx-lg-5 justify-content-center mt-4">
-                <div class="col-lg-10">
-                    <div class="lesson-content">
-                        <h2 class="mb-4">Compounding Frequency Matters</h2>
-                        
-                        <p>The more frequently compounding occurs, the more your money will grow. Let's see how different compounding frequencies affect an investment of $10,000 at 6% annual interest over 20 years:</p>
-                        
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover">
-                                <thead class="table-success">
-                                    <tr>
-                                        <th>Compounding Frequency</th>
-                                        <th>Formula Calculation</th>
-                                        <th>Final Value</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Annually (n=1)</td>
-                                        <td>$10,000 × (1 + 0.06/1)^(1×20)</td>
-                                        <td>$32,071</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Semi-annually (n=2)</td>
-                                        <td>$10,000 × (1 + 0.06/2)^(2×20)</td>
-                                        <td>$32,405</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Quarterly (n=4)</td>
-                                        <td>$10,000 × (1 + 0.06/4)^(4×20)</td>
-                                        <td>$32,578</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Monthly (n=12)</td>
-                                        <td>$10,000 × (1 + 0.06/12)^(12×20)</td>
-                                        <td>$32,705</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Daily (n=365)</td>
-                                        <td>$10,000 × (1 + 0.06/365)^(365×20)</td>
-                                        <td>$32,809</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        
-                        <p class="mt-3">Notice that while the compounding frequency does make a difference, the biggest factor is still the combination of time and rate of return. This shows the power of letting your investments grow over long periods.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Interactive Element -->
-            <div class="row gx-4 gx-lg-5 justify-content-center mt-4">
-                <div class="col-lg-10">
-                    <div class="lesson-content">
-                        <h2 class="mb-4">Compound Interest Calculator</h2>
-                        
-                        <div class="interactive-element">
-                            <h4 class="text-center mb-4">Explore the Power of Compounding</h4>
-                            
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="mb-3">
-                                        <label for="initialInvestment" class="form-label">Initial Investment ($)</label>
-                                        <input type="number" class="form-control" id="initialInvestment" min="1" value="1000">
-                                    </div>
-                                    
-                                    <div class="mb-3">
-                                        <label for="annualRate" class="form-label">Annual Interest Rate (%)</label>
-                                        <input type="number" class="form-control" id="annualRate" min="0.1" max="50" step="0.1" value="7">
-                                    </div>
-                                    
-                                    <div class="mb-3">
-                                        <label for="timeYears" class="form-label">Investment Time (Years)</label>
-                                        <input type="range" class="form-range" id="timeYears" min="1" max="50" value="10">
-                                        <div class="d-flex justify-content-between">
-                                            <span>1</span>
-                                            <span id="timeValue">10</span>
-                                            <span>50</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="mb-3">
-                                        <label for="compoundFrequency" class="form-label">Compounding Frequency</label>
-                                        <select class="form-select" id="compoundFrequency">
-                                            <option value="1">Annually</option>
-                                            <option value="2">Semi-annually</option>
-                                            <option value="4">Quarterly</option>
-                                            <option value="12" selected>Monthly</option>
-                                            <option value="365">Daily</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-7">
-                                    <div class="bg-light p-4 rounded h-100">
-                                        <h5 class="text-center">Results</h5>
-                                        
-                                        <div class="text-center my-4">
-                                            <h3 class="text-success mb-0">$<span id="finalValue">0</span></h3>
-                                            <p class="text-muted">Final Value</p>
-                                        </div>
-                                        
-                                        <div class="d-flex justify-content-between">
-                                            <div>
-                                                <h5>$<span id="principalAmount">1000</span></h5>
-                                                <p class="text-muted">Principal</p>
-                                            </div>
-                                            <div>
-                                                <h5>$<span id="interestEarned">0</span></h5>
-                                                <p class="text-muted">Interest Earned</p>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="mt-3">
-                                            <div class="progress" style="height: 24px;">
-                                                <div id="principalBar" class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
-                                                <div id="interestBar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
-                                            </div>
-                                            <div class="d-flex justify-content-between mt-2">
-                                                <small>Principal</small>
-                                                <small>Interest</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- The Magic of Time -->
-            <div class="row gx-4 gx-lg-5 justify-content-center mt-4">
-                <div class="col-lg-10">
-                    <div class="lesson-content">
-                        <h2 class="mb-4">The Magic of Time in Compounding</h2>
-                        
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <p>One of the most powerful aspects of compound interest is how it accelerates over time. The longer you leave your money invested, the faster it grows.</p>
-                                
-                                <div class="alert alert-success">
-                                    <h5><i class="fas fa-key me-2"></i> Key Takeaway</h5>
-                                    <p class="mb-0">Starting early, even with smaller amounts, can outperform starting later with larger amounts due to the power of compound interest over time.</p>
-                                </div>
-                                
-                                <p>Consider these two investors:</p>
-                                <ul>
-                                    <li><strong>Early Bird:</strong> Invests $5,000 at age 25, then stops</li>
-                                    <li><strong>Late Starter:</strong> Invests $5,000 at age 35, and again at 36, 37, 38, and 39 (total: $25,000)</li>
-                                </ul>
-                                
-                                <p>At a 7% annual return, by age 65:</p>
-                                <ul>
-                                    <li><strong>Early Bird:</strong> $74,872</li>
-                                    <li><strong>Late Starter:</strong> $68,894</li>
-                                </ul>
-                                
-                                <p>The Early Bird invested 5 times less money but ended up with more!</p>
-                            </div>
-                            
-                            <div class="col-md-6">
-                                <div class="text-center">
-                                    <img src="img/early-vs-late.png" alt="Comparison of early vs late investing" class="lesson-image img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             
             <!-- Key Takeaways -->
             <div class="row gx-4 gx-lg-5 justify-content-center mt-4">

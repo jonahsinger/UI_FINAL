@@ -1,0 +1,107 @@
+/* Custom Styles for Personal Finance Fundamentals */
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+/* Auth pages */
+.auth-form-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Lesson Content */
+.lesson-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.definition-box {
+    background-color: #f8f9fa;
+    border-left: 4px solid #198754;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.lesson-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.3rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Progress Tracking */
+.progress {
+    height: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    transition: width 0.5s ease;
+    border-radius: 0.5rem;
+}
+
+/* Quiz Styles */
+.quiz-option {
+    cursor: pointer;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+.quiz-option:hover {
+    background-color: #f8f9fa;
+    border-color: #198754;
+}
+
+.quiz-option.selected {
+    background-color: #198754;
+    color: #fff;
+    border-color: #198754;
+}
+
+.option-correct {
+    background-color: #198754 !important;
+    color: #fff !important;
+    border-color: #198754 !important;
+}
+
+.option-incorrect {
+    background-color: #dc3545 !important;
+    color: #fff !important;
+    border-color: #dc3545 !important;
+}
+
+/* Statistics Page */
+#progressChart {
+    width: 100%;
+    max-height: 400px;
+}
+
+.lesson-stat-card {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    padding: 1.5rem 0;
+    background-color: #343a40;
+    color: #fff;
+} 
