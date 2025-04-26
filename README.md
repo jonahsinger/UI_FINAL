@@ -73,6 +73,10 @@ This educational project is available for personal use and learning.
 
 Created as an educational tool for teaching stock market basics to beginners.
 
+## Jonah's Branch
+
+This branch contains updates to lesson content, including modifications to the compounding returns and tax implications lessons.
+
 ---
 
 Happy Learning! 📈 
